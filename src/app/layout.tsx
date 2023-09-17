@@ -5,6 +5,10 @@ import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://andrienw.com'),
+  alternates: {
+    canonical: '/',
+  },
   title: 'Andrien Wiandyano | React Developer',
   authors: [{ name: 'Andrien Wiandyano', url: 'https://andrienw.com' }],
   description:
@@ -29,14 +33,6 @@ export const metadata: Metadata = {
     title: 'Andrien Wiandyano | React Developer',
     description:
       "Andrien Wiandyano's personal website and portfolio. I'm a React developer on a mission to make the web an exciting playground!",
-    images: [
-      {
-        url: 'https://andrienw.com/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'Andrien Wiandyano | React Developer',
-      },
-    ],
     siteName: 'Andrien Wiandyano | React Developer',
   },
 };
