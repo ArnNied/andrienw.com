@@ -30,10 +30,10 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://andrienw.com',
-    title: 'Andrien Wiandyano | React Developer',
+    title: 'Andrien Wiandyano | Full Stack Developer',
     description:
-      "Andrien Wiandyano's personal website and portfolio. I'm a React developer on a mission to make the web an exciting playground!",
-    siteName: 'Andrien Wiandyano | React Developer',
+      "Andrien Wiandyano's personal website and portfolio. I'm a Full Stack developer on a mission to make the web an exciting playground!",
+    siteName: 'Andrien Wiandyano | Full Stack Developer',
   },
 };
 

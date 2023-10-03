@@ -93,7 +93,7 @@ export default function HomePage(): JSX.Element {
               digital realm.
             </p>
           </div>
-          <div className='flex flex-row flex-wrap gap-x-4 gap-y-2'>
+          <address className='flex flex-row flex-wrap gap-x-4 gap-y-2 not-italic'>
             {contacts.map(({ name, label, link, icon }) => (
               <a
                 key={name}
@@ -110,7 +110,7 @@ export default function HomePage(): JSX.Element {
                 </span>
               </a>
             ))}
-          </div>
+          </address>
         </section>
       </main>
     </>

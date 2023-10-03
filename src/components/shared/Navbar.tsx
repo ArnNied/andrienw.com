@@ -12,10 +12,10 @@ export default function SharedNavbar(): JSX.Element {
       name: 'Home',
       path: '/',
     },
-    {
-      name: 'Projects',
-      path: '/projects',
-    },
+    // {
+    //   name: 'Projects',
+    //   path: 'https://github.com/ArnNied/',
+    // },
   ];
 
   return (
@@ -33,6 +33,14 @@ export default function SharedNavbar(): JSX.Element {
               {name}
             </Link>
           ))}
+          <a
+            href='https://github.com/ArnNied'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='hover:text-primary transition-colors'
+          >
+            Projects
+          </a>
         </nav>
       </div>
       <div className='h-1 bg-gradient'></div>
