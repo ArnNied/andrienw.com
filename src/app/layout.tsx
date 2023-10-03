@@ -9,10 +9,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
-  title: 'Andrien Wiandyano | React Developer',
+  title: 'Andrien Wiandyano — Full Stack Developer',
   authors: [{ name: 'Andrien Wiandyano', url: 'https://andrienw.com' }],
   description:
-    "Andrien Wiandyano's personal website and portfolio. I'm a React developer on a mission to make the web an exciting playground!",
+    "Andrien Wiandyano's personal website and portfolio. I'm a Full Stack developer on a mission to make the web an exciting playground!",
   keywords: [
     'Andrien Wiandyano',
     'Andrien',
@@ -20,8 +20,10 @@ export const metadata: Metadata = {
     'AndrienW',
     'Portfolio',
     'React',
+    'Full Stack',
     'Developer',
     'React Developer',
+    'Full Stack Developer',
     'Personal Website',
     'Web Developer',
     'Frontend Developer',
@@ -30,10 +32,10 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://andrienw.com',
-    title: 'Andrien Wiandyano | Full Stack Developer',
+    title: 'Andrien Wiandyano — Full Stack Developer',
     description:
       "Andrien Wiandyano's personal website and portfolio. I'm a Full Stack developer on a mission to make the web an exciting playground!",
-    siteName: 'Andrien Wiandyano | Full Stack Developer',
+    siteName: 'Andrien Wiandyano — Full Stack Developer',
   },
 };
 

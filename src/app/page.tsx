@@ -81,7 +81,7 @@ export default function HomePage(): JSX.Element {
               Andrien Wiandyano
             </h1>
             <p className='text-2xl md:text-4xl font-semibold italic'>
-              React Developer
+              Full Stack Developer
             </p>
           </header>
           <div className='w-8 md:w-12 h-1 md:h-1.5 bg-primary'></div>
