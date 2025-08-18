@@ -1,6 +1,6 @@
 import SharedNavbar from '@/components/shared/Navbar';
 
-export default function HomePage(): JSX.Element {
+export default function HomePage() {
   const contacts = [
     {
       name: 'Email',
@@ -81,16 +81,18 @@ export default function HomePage(): JSX.Element {
               Andrien Wiandyano
             </h1>
             <p className='text-2xl md:text-4xl font-semibold italic'>
-              Full Stack Developer
+              Web Developer
             </p>
           </header>
           <div className='w-8 md:w-12 h-1 md:h-1.5 bg-primary'></div>
           <div className='max-w-4xl space-y-1'>
             <p>
-              I specialize in crafting captivating user interfaces and seamless
+              Welcome to my website. I&apos;m an aspiring Web Developer based in
+              Indonesia.
+              {/* I specialize in crafting captivating user interfaces and seamless
               experiences that leave a lasting impression. With a knack for
               clean code and an eye for design, I bring ideas to life in the
-              digital realm.
+              digital realm. */}
             </p>
           </div>
           <address className='flex flex-row flex-wrap gap-x-4 gap-y-2 not-italic'>

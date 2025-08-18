@@ -1,4 +1,4 @@
-import './globals.scss';
+import './globals.css';
 
 import { Analytics } from '@vercel/analytics/react';
 
@@ -9,43 +9,39 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
-  title: 'Andrien Wiandyano — Full Stack Developer',
+  title: 'Andrien Wiandyano — Web Developer',
   authors: [{ name: 'Andrien Wiandyano', url: 'https://andrienw.com' }],
   description:
-    "Andrien Wiandyano's personal website and portfolio. I'm a Full Stack developer on a mission to make the web an exciting playground!",
+    "Andrien Wiandyano's personal website and portfolio. I'm an aspiring Web Developer based in Indonesia",
   keywords: [
     'Andrien Wiandyano',
     'Andrien',
     'Wiandyano',
     'AndrienW',
     'Portfolio',
-    'React',
-    'Full Stack',
-    'Developer',
-    'React Developer',
-    'Full Stack Developer',
     'Personal Website',
+    'Developer',
     'Web Developer',
-    'Frontend Developer',
+    'Software Developer',
   ],
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: 'https://andrienw.com',
-    title: 'Andrien Wiandyano — Full Stack Developer',
+    title: 'Andrien Wiandyano — Web Developer',
     description:
-      "Andrien Wiandyano's personal website and portfolio. I'm a Full Stack developer on a mission to make the web an exciting playground!",
-    siteName: 'Andrien Wiandyano — Full Stack Developer',
+      "Andrien Wiandyano's personal website and portfolio. I'm an aspiring Web Developer based in Indonesia",
+    siteName: 'Andrien Wiandyano — Web Developer',
   },
 };
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}): JSX.Element {
+}>) {
   return (
-    <html lang='en' className='dark'>
+    <html lang='en' data-theme='dark'>
       <body className='bg-background-light dark:bg-background-dark text-text-dark dark:text-text-light antialiased'>
         {children}
         <Analytics />

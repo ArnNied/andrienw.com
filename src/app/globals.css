@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import 'tailwindcss';
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-text-light: #f2edfd;
+  --color-text-dark: #0a0416;
+  --color-background-light: #f2edfd;
+  --color-background-dark: #0a0416;
+  --color-primary: #5416d0;
+  --color-secondary: #1c024f;
+  --color-accent: #c61ce8;
+
+  --font-sans: "Roboto", var(--font-geist-sans), var(--font-sans);
+  --font-mono: var(--font-geist-mono), var(--font-mono);
+
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth !important;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl xl:text-6xl;
+  }
+
+  h2 {
+    @apply text-4xl md:text-4xl xl:text-5xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl xl:text-4xl;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl xl:text-3xl;
+  }
+
+  p {
+    @apply text-base md:text-lg xl:text-xl;
+  }
+
+  ::selection {
+    @apply bg-primary text-white;
+  }
+}
+
+@layer components {
+  .bg-gradient {
+    @apply bg-linear-to-r from-primary to-accent;
+  }
+
+  .text-gradient {
+    @apply bg-linear-to-r from-primary to-accent bg-clip-text text-transparent pb-2 -mb-2 ;
+  }
+}
+
+@layer utilities {
+  .container {
+    @apply max-w-md sm:max-w-xl md:max-w-3xl lg:max-w-6xl mx-auto px-4 md:px-6 lg:px-12;
+  }
+}

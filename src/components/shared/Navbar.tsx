@@ -3,6 +3,7 @@
 import { clsx } from 'clsx';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { JSX } from 'react';
 
 export default function SharedNavbar(): JSX.Element {
   const pathname = usePathname();
