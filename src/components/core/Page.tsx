@@ -1,4 +1,4 @@
-import SharedNavbar from '@/components/shared/Navbar';
+import Navbar from '@/components/shared/Navbar';
 
 export default function Page({
   children,
@@ -7,7 +7,7 @@ export default function Page({
 }>) {
   return (
     <>
-      <SharedNavbar />
+      <Navbar />
       <main>{children}</main>
     </>
   );

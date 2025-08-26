@@ -8,10 +8,42 @@ import { JSX, useState } from 'react';
 import { IconContext } from 'react-icons';
 import { FaBars, FaXmark } from 'react-icons/fa6';
 
-export default function SharedNavbar(): JSX.Element {
+type NavbarRoute = {
+  name: string;
+  path: string;
+  newTab: boolean;
+};
+
+function NavbarLink({
+  route,
+  pathname,
+}: {
+  route: NavbarRoute;
+  pathname: string;
+}): JSX.Element {
+  return (
+    <Link
+      href={route.path}
+      className='block sm:inline-block py-2.5 sm:py-0 hover:text-primary focus:text-primary'
+      target={route.newTab ? '_blank' : '_self'}
+      rel={route.newTab ? 'noopener noreferrer' : undefined}
+    >
+      <span
+        className={clsx('transition-colors', {
+          'gradient__lr gradient-text !text-transparent':
+            pathname === route.path,
+        })}
+      >
+        {route.name}
+      </span>
+    </Link>
+  );
+}
+
+export default function Navbar(): JSX.Element {
   const pathname = usePathname();
 
-  const routes = [
+  const routes: NavbarRoute[] = [
     {
       name: 'Home',
       path: '/',
@@ -22,6 +54,11 @@ export default function SharedNavbar(): JSX.Element {
       path: 'https://github.com/ArnNied/',
       newTab: true,
     },
+    {
+      name: 'Experiences',
+      path: '/experiences',
+      newTab: false,
+    },
   ];
 
   const [isOpen, setIsOpen] = useState(false);
@@ -30,9 +67,9 @@ export default function SharedNavbar(): JSX.Element {
     setIsOpen(!isOpen);
 
     if (isOpen) {
-      document.getElementById('nav-link')?.classList.replace('h-26', 'h-0');
+      document.getElementById('nav-link')?.classList.replace('h-34', 'h-0');
     } else {
-      document.getElementById('nav-link')?.classList.replace('h-0', 'h-26');
+      document.getElementById('nav-link')?.classList.replace('h-0', 'h-34');
     }
   }
 
@@ -49,6 +86,10 @@ export default function SharedNavbar(): JSX.Element {
               height={48}
             />
           </Link>
+          {/* Displays the path name */}
+          <h1 className='block sm:hidden'>
+            {routes.find((route) => route.path === pathname)?.name}
+          </h1>
           <button
             type='button'
             onClick={toggleMenu}
@@ -63,27 +104,13 @@ export default function SharedNavbar(): JSX.Element {
           id='nav-link'
           className='w-full sm:w-auto h-0 sm:h-auto block flex-col sm:flex-row items-start sm:items-center sm:space-x-6 sm:py-6 transition-[height] duration-300 overflow-hidden'
         >
-          {routes.map(({ name, path, newTab }) => (
-            <Link
-              key={name}
-              href={path}
-              className='block sm:inline-block py-3 sm:py-0 hover:text-primary focus:text-primary tracking-widest sm:tracking-normal'
-              target={newTab ? '_blank' : '_self'}
-              rel={newTab ? 'noopener noreferrer' : undefined}
-            >
-              <span
-                className={clsx('transition-colors', {
-                  'text-gradient !text-transparent': pathname === path,
-                })}
-              >
-                {name}
-              </span>
-            </Link>
+          {routes.map((route) => (
+            <NavbarLink key={route.name} route={route} pathname={pathname} />
           ))}
         </nav>
       </div>
       {/* Gradient line */}
-      <div className='h-1 bg-gradient'></div>
+      <div className='h-1 gradient__lr'></div>
     </header>
   );
 }

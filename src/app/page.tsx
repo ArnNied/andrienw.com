@@ -76,7 +76,7 @@ export default function HomePage() {
     <Page>
       <section className='h-screen grid content-center space-y-2 md:space-y-6 container'>
         <header>
-          <h1 className='w-fit font-bold text-gradient descender-fix'>
+          <h1 className='h1 w-fit font-bold descender-fix gradient__lr gradient-text'>
             Andrien Wiandyano
           </h1>
           <p className='text-2xl md:text-4xl font-semibold italic'>
