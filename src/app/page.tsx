@@ -1,7 +1,7 @@
 import Page from '@/components/core/Page';
 import SharedNavbar from '@/components/shared/Navbar';
 
-export default function HomePage() {
+function HeroSection() {
   const contacts = [
     {
       name: 'Email',
@@ -72,47 +72,53 @@ export default function HomePage() {
       ),
     },
   ];
+
   return (
-    <Page>
-      <section className='h-screen grid content-center space-y-2 md:space-y-6 container'>
-        <header>
-          <h1 className='h1 w-fit font-bold descender-fix gradient__lr gradient-text'>
-            Andrien Wiandyano
-          </h1>
-          <p className='text-2xl md:text-4xl font-semibold italic'>
-            Web Developer
-          </p>
-        </header>
-        <div className='w-8 md:w-12 h-1 md:h-1.5 bg-primary'></div>
-        <div className='max-w-4xl space-y-1'>
-          <p>
-            Welcome to my website. I&apos;m an aspiring Web Developer based in
-            Indonesia.
-            {/* I specialize in crafting captivating user interfaces and seamless
+    <section className='h-screen grid content-center space-y-2 md:space-y-6 container'>
+      <header>
+        <h1 className='h1 w-fit font-bold descender-fix gradient__lr gradient-text'>
+          Andrien Wiandyano
+        </h1>
+        <p className='text-2xl md:text-4xl font-semibold italic'>
+          Web Developer
+        </p>
+      </header>
+      <div className='w-8 md:w-12 h-1 md:h-1.5 bg-primary'></div>
+      <div className='max-w-4xl space-y-1'>
+        <p>
+          Welcome to my website. I&apos;m an aspiring Web Developer based in
+          Indonesia.
+          {/* I specialize in crafting captivating user interfaces and seamless
               experiences that leave a lasting impression. With a knack for
               clean code and an eye for design, I bring ideas to life in the
               digital realm. */}
-          </p>
-        </div>
-        <address className='flex flex-row flex-wrap gap-x-4 gap-y-2 not-italic'>
-          {contacts.map(({ name, label, link, icon }) => (
-            <a
-              key={name}
-              href={link}
-              target='_blank'
-              rel='noopener noreferrer'
-              className='flex flex-row items-center space-x-2 group'
-            >
-              <span className='flex items-center justify-center w-6 h-6'>
-                {icon}
-              </span>
-              <span className='text-slate-500 group-hover:text-text-light transition-colors'>
-                {label}
-              </span>
-            </a>
-          ))}
-        </address>
-      </section>
+        </p>
+      </div>
+      <address className='flex flex-row flex-wrap gap-x-4 gap-y-2 not-italic'>
+        {contacts.map(({ name, label, link, icon }) => (
+          <a
+            key={name}
+            href={link}
+            target='_blank'
+            rel='noopener noreferrer'
+            className='flex flex-row items-center space-x-2 group'
+          >
+            <span className='flex items-center justify-center w-6 h-6'>
+              {icon}
+            </span>
+            <span className='text-slate-500 group-hover:text-text-light transition-colors'>
+              {label}
+            </span>
+          </a>
+        ))}
+      </address>
+    </section>
+  );
+}
+export default function HomePage() {
+  return (
+    <Page>
+      <HeroSection />
     </Page>
   );
 }

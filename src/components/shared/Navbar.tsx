@@ -49,6 +49,11 @@ export default function Navbar(): JSX.Element {
       path: '/',
       newTab: false,
     },
+    // {
+    //   name: 'Blog',
+    //   path: '/blog',
+    //   newTab: false,
+    // },
     {
       name: 'Projects',
       path: 'https://github.com/ArnNied/',
