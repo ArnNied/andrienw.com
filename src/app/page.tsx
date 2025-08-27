@@ -1,5 +1,4 @@
 import Page from '@/components/core/Page';
-import SharedNavbar from '@/components/shared/Navbar';
 
 function HeroSection() {
   const contacts = [

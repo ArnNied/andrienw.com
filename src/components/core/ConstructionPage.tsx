@@ -1,23 +1,14 @@
-'use client';
-
-import { usePathname } from 'next/navigation';
-
 import Page from '@/components/core/Page';
-import { IconContext } from 'react-icons';
-import { LuConstruction } from 'react-icons/lu';
+import { Construction } from 'lucide-react';
 
-export default function Construction() {
-  const pathname = usePathname();
-
+export default function ConstructionPage() {
   return (
     <Page cta={false} footer={false}>
       <section className='h-screen grid justify-center items-center container'>
         <div className='max-w-2xl px-8 md:px-16 py-8 border-2 border-secondary rounded space-y-4'>
           <div className='flex flex-col md:flex-row items-center space-x-0 md:space-x-4'>
             <span className='w-32 md:w-40 xl:w-64'>
-              <IconContext.Provider value={{ size: 'auto' }}>
-                <LuConstruction />
-              </IconContext.Provider>
+              <Construction className='w-full h-full' />
             </span>
             <h1 className='font-bold text-center gradient__lr gradient-text grow text-size-4xl'>
               Under Construction
@@ -26,7 +17,7 @@ export default function Construction() {
           <p className='text-center'>
             This page is currently under construction.
             <br />
-            Thank you for your interest.
+            Please check back later.
           </p>
         </div>
       </section>

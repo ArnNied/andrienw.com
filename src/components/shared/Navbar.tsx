@@ -1,12 +1,11 @@
 'use client';
 
 import { clsx } from 'clsx';
+import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { JSX, useState } from 'react';
-import { IconContext } from 'react-icons';
-import { FaBars, FaXmark } from 'react-icons/fa6';
 
 type NavbarRoute = {
   name: string;
@@ -98,11 +97,13 @@ export default function Navbar(): JSX.Element {
           <button
             type='button'
             onClick={toggleMenu}
-            className='w-12 h-10 block flex items-center justify-center sm:hidden border border-text-light rounded'
+            className='w-11 h-9 p-1.5 block flex items-center justify-center sm:hidden border border-text-light rounded'
           >
-            <IconContext.Provider value={{ size: '20px' }}>
-              {isOpen ? <FaXmark /> : <FaBars />}
-            </IconContext.Provider>
+            {isOpen ? (
+              <X className='w-full h-full' />
+            ) : (
+              <Menu className='w-full h-full' />
+            )}
           </button>
         </div>
         <nav

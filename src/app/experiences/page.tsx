@@ -1,7 +1,5 @@
-'use client';
-
-import Construction from '@/components/core/Construction';
+import ConstructionPage from '@/components/core/ConstructionPage';
 
 export default function ExperiencesPage() {
-  return <Construction />;
+  return <ConstructionPage />;
 }
