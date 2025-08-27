@@ -11,7 +11,7 @@ export default function NotFound() {
     <Page cta={false} footer={false}>
       <section className='h-screen grid justify-center items-center container'>
         <div className='max-w-xl px-16 py-8 border-2 border-secondary rounded space-y-4'>
-          <h1 className='h1 font-bold text-center gradient__lr gradient-text'>
+          <h1 className='font-bold text-center gradient__lr gradient-text text-size-4xl'>
             Not Found
           </h1>
           <p className='text-center'>

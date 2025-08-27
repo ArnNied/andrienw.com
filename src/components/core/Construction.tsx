@@ -19,7 +19,7 @@ export default function Construction() {
                 <LuConstruction />
               </IconContext.Provider>
             </span>
-            <h1 className='h1 font-bold text-center gradient__lr gradient-text grow'>
+            <h1 className='font-bold text-center gradient__lr gradient-text grow text-size-4xl'>
               Under Construction
             </h1>
           </div>
