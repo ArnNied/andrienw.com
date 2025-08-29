@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { JSX, useState } from 'react';
 
-type NavbarRoute = {
+type TNavbarRoute = {
   name: string;
   path: string;
   newTab: boolean;
@@ -17,7 +17,7 @@ function NavbarLink({
   route,
   pathname,
 }: {
-  route: NavbarRoute;
+  route: TNavbarRoute;
   pathname: string;
 }): JSX.Element {
   return (
@@ -42,7 +42,7 @@ function NavbarLink({
 export default function Navbar(): JSX.Element {
   const pathname = usePathname();
 
-  const routes: NavbarRoute[] = [
+  const routes: TNavbarRoute[] = [
     {
       name: 'Home',
       path: '/',
@@ -59,8 +59,8 @@ export default function Navbar(): JSX.Element {
       newTab: true,
     },
     {
-      name: 'Experiences',
-      path: '/experiences',
+      name: 'Careers',
+      path: '/careers',
       newTab: false,
     },
   ];

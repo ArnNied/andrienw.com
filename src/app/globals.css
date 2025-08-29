@@ -16,6 +16,8 @@
 
   --font-sans: "Roboto", var(--font-geist-sans), var(--font-sans);
   --font-mono: var(--font-geist-mono), var(--font-mono);
+  /* --tw-duration: 50ms; */
+  --default-transition-duration: 100ms;
 
 }
 
@@ -24,9 +26,9 @@
     scroll-behavior: smooth !important;
   }
 
-  p {
+  /* p {
     @apply text-base md:text-lg xl:text-xl;
-  }
+  } */
 
   ::selection {
     @apply bg-primary text-white;
@@ -60,6 +62,10 @@
 
   .text-size-sm {
     @apply text-sm md:text-base xl:text-lg;
+  }
+
+  .text-size-xs {
+    @apply text-xs md:text-sm xl:text-base;
   }
 
   .text-size-reset {
