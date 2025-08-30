@@ -1,11 +1,18 @@
 import { sortCareers } from '@/utils/sortCareers';
 import Career, { TCareer } from '@/components/careers/Career';
+import { JSX } from 'react';
+import Section from './Section';
 
 const works: TCareer[] = [
   {
     category: 'Formal',
-    title: 'Backend Developer',
-    subtitle: 'PT Angkasa Defender Indonesia',
+    title: {
+      text: 'Backend Developer',
+    },
+    subtitle: {
+      text: 'PT Angkasa Defender Indonesia',
+      href: 'https://www.asdf.id/',
+    },
     type: 'Internship',
     responsibilities: [
       'Worked within an Agile framework to deliver high-quality software solutions',
@@ -22,8 +29,13 @@ const works: TCareer[] = [
   },
   {
     category: 'Formal',
-    title: 'Cloud Computing Cohort',
-    subtitle: 'Bangkit Academy By Google, GoTo, Traveloka',
+    title: {
+      text: 'Cloud Computing Cohort',
+    },
+    subtitle: {
+      text: 'Bangkit Academy By Google, GoTo, and Traveloka',
+      href: 'https://grow.google/intl/id_id/bangkit/',
+    },
     type: 'Student Internship',
     responsibilities: [
       'Graduated with distinction as the top 10% (136 out of 1.3k+) of the Cloud Computing learning path',
@@ -39,11 +51,11 @@ const works: TCareer[] = [
   },
 ];
 
-export default function WorkSection() {
+export default function ExperienceSection(): JSX.Element {
   const sortedExperience = sortCareers(works);
 
   return (
-    <section className='container mt-10 py-16 space-y-8 md:space-y-0'>
+    <Section>
       {sortedExperience.map((career, index) => (
         <Career
           key={index}
@@ -53,6 +65,6 @@ export default function WorkSection() {
           isCurrent={career.date.current}
         />
       ))}
-    </section>
+    </Section>
   );
 }

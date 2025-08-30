@@ -1,4 +1,6 @@
-export default function HeroSection() {
+import { JSX } from 'react';
+
+export default function HeroSection(): JSX.Element {
   const contacts = [
     {
       name: 'Email',

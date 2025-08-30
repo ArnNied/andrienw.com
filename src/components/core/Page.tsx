@@ -1,4 +1,5 @@
 import Navbar from '@/components/shared/Navbar';
+import { JSX } from 'react';
 
 export default function Page({
   children,
@@ -10,7 +11,7 @@ export default function Page({
   navbar?: boolean;
   cta?: boolean;
   footer?: boolean;
-}>) {
+}>): JSX.Element {
   return (
     <>
       {navbar && <Navbar />}

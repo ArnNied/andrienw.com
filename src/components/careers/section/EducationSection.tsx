@@ -1,10 +1,15 @@
 import { sortCareers } from '@/utils/sortCareers';
 import Career, { TCareer } from '@/components/careers/Career';
+import { JSX } from 'react';
+import Section from './Section';
 
 const educations: TCareer[] = [
   {
     category: 'Education',
-    title: 'Bina Sarana Informatika University',
+    title: {
+      text: 'Bina Sarana Informatika University',
+      href: 'https://www.bsi.ac.id/',
+    },
     responsibilities: [
       'GPA: 4.00',
       'Became a central figure in study circles as fellow students often sought guidance for navigating academic hurdles',
@@ -18,7 +23,10 @@ const educations: TCareer[] = [
   },
   {
     category: 'Education',
-    title: 'Vocational High School 2 Jakarta',
+    title: {
+      text: 'Vocational High School 2 Jakarta',
+      href: 'https://smkn2jkt.sch.id/',
+    },
     // responsibilities: [
     // ],
     date: {
@@ -29,11 +37,11 @@ const educations: TCareer[] = [
   },
 ];
 
-export default function EducationSection() {
+export default function EducationSection(): JSX.Element {
   const sortedEducations = sortCareers(educations);
 
   return (
-    <section className='container mt-10 py-16 space-y-8 md:space-y-0'>
+    <Section>
       {sortedEducations.map((career, index) => (
         <Career
           key={index}
@@ -43,6 +51,6 @@ export default function EducationSection() {
           isCurrent={career.date.current}
         />
       ))}
-    </section>
+    </Section>
   );
 }

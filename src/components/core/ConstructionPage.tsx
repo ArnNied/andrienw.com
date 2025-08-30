@@ -1,7 +1,8 @@
 import Page from '@/components/core/Page';
 import { Construction } from 'lucide-react';
+import { JSX } from 'react';
 
-export default function ConstructionPage() {
+export default function ConstructionPage(): JSX.Element {
   return (
     <Page cta={false} footer={false}>
       <section className='h-screen grid justify-center items-center container'>

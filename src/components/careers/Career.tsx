@@ -1,10 +1,18 @@
 import { formatCareerDate } from '@/utils/formatCareerDate';
 import clsx from 'clsx';
+import Link from 'next/link';
+import { JSX } from 'react';
 
 export type TCareer = {
   category: 'Formal' | 'Education';
-  title: string;
-  subtitle?: string;
+  title: {
+    text: string;
+    href?: string;
+  };
+  subtitle?: {
+    text: string;
+    href?: string;
+  };
   type?: string;
   responsibilities?: string[];
   summary?: string;
@@ -26,15 +34,31 @@ export default function Career({
   isFirst: boolean;
   isLast: boolean;
   isCurrent?: boolean;
-}) {
+}): JSX.Element {
   return (
     <article className='flex flex-col md:flex-row space-y-4 md:space-y-0'>
       <header className='w-full md:w-5/12 p-0 md:py-12 md:text-right'>
-        <h3 className='font-bold text-size-2xl gradient__lr gradient-text'>
-          {career.title}
+        <h3
+          className={clsx('font-bold text-size-2xl gradient__lr gradient-text')}
+        >
+          {career.title.href ? (
+            <Link className='hover:underline' href={career.title.href}>
+              {career.title.text}
+            </Link>
+          ) : (
+            <>{career.title.text}</>
+          )}
         </h3>
         {career.subtitle && (
-          <p className='font-semibold text-size-base'>{career.subtitle}</p>
+          <p className={clsx('font-semibold text-size-base')}>
+            {career.subtitle.href ? (
+              <Link className='hover:underline' href={career.subtitle.href}>
+                {career.subtitle.text}
+              </Link>
+            ) : (
+              <>{career.subtitle.text}</>
+            )}
+          </p>
         )}
         {career.type && (
           <p className='text-size-sm text-slate-500'>{career.type}</p>
@@ -74,7 +98,7 @@ export default function Career({
         {career.responsibilities && (
           <button
             type='button'
-            className='px-10 py-6 cursor-pointer hover:bg-primary text-left border border-primary rounded-lg transition-colors'
+            className='px-10 py-6 cursor-pointer hover:bg-primary text-left border border-secondary hover:ring-4 hover:ring-secondary rounded-lg transition-all hover:scale-102'
           >
             <ul className='list-disc space-y-2'>
               {career.responsibilities?.map((responsibility, index) => (
