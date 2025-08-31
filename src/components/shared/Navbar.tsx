@@ -78,8 +78,8 @@ export default function Navbar(): JSX.Element {
   }
 
   return (
-    <header className='w-full fixed top-0 light:bg-background-light/60 dark:bg-background-dark/60 shadow-lg shadow-primary/20 backdrop-blur-lg z-50'>
-      <div className='py-2 sm:py-0 flex flex-wrap justify-start sm:justify-start items-center container'>
+    <header className='inset-x-0 fixed top-0 light:bg-background-light/75 dark:bg-background-dark/75 shadow-lg shadow-primary/20 backdrop-blur-lg z-20'>
+      <div className='w-full py-2 sm:py-0 flex flex-wrap justify-start items-center container'>
         <div className='w-full sm:w-auto mr-0 sm:mr-12 flex justify-between items-center'>
           <Link href='/' className='flex items-center'>
             <Image

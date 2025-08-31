@@ -2,7 +2,6 @@ import { ECareerSections } from '@/app/careers/page';
 import { Briefcase, School } from 'lucide-react';
 import { JSX } from 'react';
 import { motion } from 'motion/react';
-import clsx from 'clsx';
 
 export function SwitchButton({
   text,

@@ -29,11 +29,13 @@ export default function Career({
   isFirst,
   isLast,
   isCurrent,
+  setCareerModalData,
 }: {
   career: TCareer;
   isFirst: boolean;
   isLast: boolean;
   isCurrent?: boolean;
+  setCareerModalData: (career: TCareer) => void;
 }): JSX.Element {
   return (
     <article className='flex flex-col md:flex-row space-y-4 md:space-y-0'>
@@ -98,6 +100,7 @@ export default function Career({
         {career.responsibilities && (
           <button
             type='button'
+            onClick={() => setCareerModalData(career)}
             className='px-10 py-6 cursor-pointer hover:bg-primary text-left border border-secondary hover:ring-4 hover:ring-secondary rounded-lg transition-all hover:scale-102'
           >
             <ul className='list-disc space-y-2'>
