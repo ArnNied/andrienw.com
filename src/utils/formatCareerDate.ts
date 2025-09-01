@@ -1,6 +1,8 @@
 import { TCareer } from '@/components/careers/Career';
 
 export function formatCareerDate(date: TCareer['date']): string {
+  if (!date) return '';
+
   const formatter = Intl.DateTimeFormat('en', {
     month: 'short',
     year: 'numeric',

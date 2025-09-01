@@ -24,6 +24,68 @@ export type TCareer = {
   };
 };
 
+function CareerTitle({
+  text,
+  textLink,
+}: {
+  text: string;
+  textLink?: string;
+}): JSX.Element {
+  return (
+    <h3 className='font-bold text-size-2xl gradient__lr gradient-text w-fit'>
+      {textLink ? (
+        <Link className='hover:underline' href={textLink}>
+          {text}
+        </Link>
+      ) : (
+        <>{text}</>
+      )}
+    </h3>
+  );
+}
+
+function CareerSubtitle({
+  text,
+  textLink,
+}: {
+  text?: string;
+  textLink?: string;
+}): JSX.Element {
+  return (
+    <>
+      {text && (
+        <p className='font-semibold text-size-base'>
+          {textLink ? (
+            <Link className='hover:underline' href={textLink}>
+              {text}
+            </Link>
+          ) : (
+            <>{text}</>
+          )}
+        </p>
+      )}
+    </>
+  );
+}
+
+function CareerSubtitleMuted({
+  text,
+  italic,
+}: {
+  text?: string;
+  italic?: boolean;
+}): JSX.Element {
+  return (
+    <>
+      {text && (
+        <p className={clsx('text-size-sm text-slate-500', italic && 'italic')}>
+          {text}
+        </p>
+      )}
+    </>
+  );
+}
+
 export default function Career({
   career,
   isFirst,
@@ -39,35 +101,14 @@ export default function Career({
 }): JSX.Element {
   return (
     <article className='flex flex-col md:flex-row space-y-4 md:space-y-0'>
-      <header className='w-full md:w-5/12 p-0 md:py-12 md:text-right'>
-        <h3
-          className={clsx('font-bold text-size-2xl gradient__lr gradient-text')}
-        >
-          {career.title.href ? (
-            <Link className='hover:underline' href={career.title.href}>
-              {career.title.text}
-            </Link>
-          ) : (
-            <>{career.title.text}</>
-          )}
-        </h3>
-        {career.subtitle && (
-          <p className={clsx('font-semibold text-size-base')}>
-            {career.subtitle.href ? (
-              <Link className='hover:underline' href={career.subtitle.href}>
-                {career.subtitle.text}
-              </Link>
-            ) : (
-              <>{career.subtitle.text}</>
-            )}
-          </p>
-        )}
-        {career.type && (
-          <p className='text-size-sm text-slate-500'>{career.type}</p>
-        )}
-        <p className='text-size-sm italic text-slate-500'>
-          {formatCareerDate(career.date)}
-        </p>
+      <header className='w-full md:w-5/12 p-0 md:py-12 md:text-right flex flex-col items-start md:items-end'>
+        <CareerTitle text={career.title.text} textLink={career.title.href} />
+        <CareerSubtitle
+          text={career.subtitle?.text}
+          textLink={career.subtitle?.href}
+        />
+        <CareerSubtitleMuted text={career.type} />
+        <CareerSubtitleMuted text={formatCareerDate(career.date)} italic />
       </header>
       <div className='hidden md:flex relative grow-0 w-8 px-12 flex flex-col items-center'>
         {/* Circle indicator */}

@@ -2,7 +2,7 @@
 
 import Page from '@/components/core/Page';
 import CategorySwitch from '@/components/careers/CategorySwitch';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { AnimatePresence } from 'motion/react';
 import Section from '@/components/careers/Section';
 import { TCareer } from '@/components/careers/Career';

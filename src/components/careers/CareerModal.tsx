@@ -1,17 +1,8 @@
 import { JSX } from 'react';
-import {
-  Description,
-  Dialog,
-  DialogBackdrop,
-  DialogPanel,
-  DialogTitle,
-} from '@headlessui/react';
+import { Description } from '@headlessui/react';
 import { TCareer } from './Career';
 import { formatCareerDate } from '@/utils/formatCareerDate';
-import clsx from 'clsx';
-import Link from 'next/link';
-import { X } from 'lucide-react';
-import Carousel from '../shared/carousel/Carousel';
+import Modal from '../shared/Modal';
 
 export default function CareerModal({
   isOpen,
@@ -19,81 +10,30 @@ export default function CareerModal({
   setCareerModalIsOpen,
 }: {
   isOpen: boolean;
-  career: TCareer | null;
+  career: TCareer;
   setCareerModalIsOpen: (isOpen: boolean) => void;
 }): JSX.Element {
   return (
-    <Dialog
-      transition
-      open={isOpen}
-      onClose={() => setCareerModalIsOpen(false)}
-      className='relative z-50 transition-all data-closed:opacity-0'
+    <Modal
+      title={career.title.text}
+      titleLink={career.title.href}
+      subtitle={career.subtitle?.text}
+      subtitleLink={career.subtitle?.href}
+      subtitleMuted={career.type}
+      subtitleMutedItalic={formatCareerDate(career.date)}
+      images={[
+        'https://images.unsplash.com/photo-1493612276216-ee3925520721?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        'https://images.unsplash.com/photo-1564659318382-6d44cf680407?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        'https://images.unsplash.com/photo-1493612276216-ee3925520721?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      ]}
+      isOpen={isOpen}
+      modalCloseCallback={() => setCareerModalIsOpen(false)}
     >
-      <DialogBackdrop
-        transition
-        className='fixed inset-0 bg-background-dark/50 backdrop-blur-lg data-closed:opacity-0 transition-all'
-      />
-      <div className='fixed inset-0 w-screen overflow-y-auto py-4'>
-        <div className='container flex min-h-full items-center justify-center'>
-          <DialogPanel className='relative px-6 md:px-12 py-4 md:py-8 bg-background-dark border border-secondary rounded-lg'>
-            <button
-              type='button'
-              onClick={() => setCareerModalIsOpen(false)}
-              className='absolute top-4 right-4 p-2 cursor-pointer hover:text-primary transition-colors'
-            >
-              <X />
-            </button>
-            <header className='pb-4 border-b border-secondary'>
-              <DialogTitle
-                as='h4'
-                className={clsx(
-                  'font-bold text-size-2xl gradient__lr gradient-text w-fit',
-                )}
-              >
-                {career?.title.href ? (
-                  <Link className='hover:underline' href={career.title.href}>
-                    {career?.title.text}
-                  </Link>
-                ) : (
-                  <>{career?.title.text}</>
-                )}
-              </DialogTitle>
-              {career?.subtitle && (
-                <p className={clsx('font-semibold text-size-base')}>
-                  {career.subtitle.href ? (
-                    <Link
-                      className='hover:underline'
-                      href={career.subtitle.href}
-                    >
-                      {career.subtitle.text}
-                    </Link>
-                  ) : (
-                    <>{career.subtitle.text}</>
-                  )}
-                </p>
-              )}
-              {career?.type && (
-                <p className='text-size-sm text-slate-500'>{career.type}</p>
-              )}
-              <p className='text-size-sm italic text-slate-500'>
-                {career?.date ? formatCareerDate(career.date) : null}
-              </p>
-            </header>
-            <div className='flex flex-col lg:flex-row divide-y divide-secondary lg:divide-y-0 lg:divide-x'>
-              <section className='w-full lg:w-1/2 flex justify-center items-center'>
-                <Carousel />
-              </section>
-              <section className='w-full lg:w-1/2 px-4 lg:px-12 py-4 lg:py-8'>
-                <Description as='ul' className='list-disc space-y-2'>
-                  {career?.responsibilities?.map((responsibility, index) => (
-                    <li key={index}>{responsibility}</li>
-                  ))}
-                </Description>
-              </section>
-            </div>
-          </DialogPanel>
-        </div>
-      </div>
-    </Dialog>
+      <Description as='ul' className='list-disc space-y-2'>
+        {career.responsibilities?.map((responsibility, index) => (
+          <li key={index}>{responsibility}</li>
+        ))}
+      </Description>
+    </Modal>
   );
 }

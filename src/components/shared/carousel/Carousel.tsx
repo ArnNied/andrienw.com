@@ -7,9 +7,12 @@ import {
 } from './CarouselNavButton';
 import useEmblaCarousel from 'embla-carousel-react';
 import clsx from 'clsx';
-import Image from 'next/image';
 
-export default function Carousel(): JSX.Element {
+export default function Carousel({
+  images,
+}: {
+  images?: string[];
+}): JSX.Element {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
 
   const { selectedIndex, scrollSnaps, onDotButtonClick } =
@@ -26,33 +29,11 @@ export default function Carousel(): JSX.Element {
     <section className='embla'>
       <div className='embla__viewport' ref={emblaRef}>
         <div className='embla__container'>
-          <div className='embla__slide'>
-            <img
-              // className='object-contain'
-              // width={300}
-              // height={200}
-              alt=''
-              src='https://images.unsplash.com/photo-1493612276216-ee3925520721?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-            />
-          </div>
-          <div className='embla__slide'>
-            <img
-              // className='object-contain'
-              // width={300}
-              // height={200}
-              alt=''
-              src='https://images.unsplash.com/photo-1564659318382-6d44cf680407?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-            />
-          </div>
-          <div className='embla__slide'>
-            <img
-              // className='object-contain'
-              // width={300}
-              // height={200}
-              alt=''
-              src='https://images.unsplash.com/photo-1493612276216-ee3925520721?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-            />
-          </div>
+          {images?.map((src, index) => (
+            <div key={index} className='embla__slide'>
+              <img alt='' src={src} />
+            </div>
+          ))}
         </div>
       </div>
 
