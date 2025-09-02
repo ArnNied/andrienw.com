@@ -1,8 +1,8 @@
 import { JSX } from 'react';
 import { Description } from '@headlessui/react';
-import { TCareer } from './Career';
 import { formatCareerDate } from '@/utils/formatCareerDate';
-import Modal from '../shared/Modal';
+import Modal from '@/components/shared/Modal';
+import { TCareer } from '@/app/careers/page';
 
 export default function CareerModal({
   isOpen,
@@ -21,11 +21,7 @@ export default function CareerModal({
       subtitleLink={career.subtitle?.href}
       subtitleMuted={career.type}
       subtitleMutedItalic={formatCareerDate(career.date)}
-      images={[
-        'https://images.unsplash.com/photo-1493612276216-ee3925520721?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        'https://images.unsplash.com/photo-1564659318382-6d44cf680407?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        'https://images.unsplash.com/photo-1493612276216-ee3925520721?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      ]}
+      images={career.images}
       isOpen={isOpen}
       modalCloseCallback={() => setCareerModalIsOpen(false)}
     >

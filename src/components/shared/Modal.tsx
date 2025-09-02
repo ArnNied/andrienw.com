@@ -93,7 +93,10 @@ export default function Modal({
   subtitleLink?: string;
   subtitleMuted?: string;
   subtitleMutedItalic?: string;
-  images?: string[];
+  images?: {
+    src: string;
+    alt?: string;
+  }[];
   isOpen: boolean;
   modalCloseCallback: () => void;
   children: React.ReactNode;

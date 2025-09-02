@@ -1,28 +1,8 @@
+import { TCareer } from '@/app/careers/page';
 import { formatCareerDate } from '@/utils/formatCareerDate';
 import clsx from 'clsx';
 import Link from 'next/link';
 import { JSX } from 'react';
-
-export type TCareer = {
-  category: 'Formal' | 'Education';
-  title: {
-    text: string;
-    href?: string;
-  };
-  subtitle?: {
-    text: string;
-    href?: string;
-  };
-  type?: string;
-  responsibilities?: string[];
-  summary?: string;
-  images?: string[];
-  date: {
-    start: { month?: number; year: number };
-    end?: { year?: number; month?: number };
-    current: boolean;
-  };
-};
 
 function CareerTitle({
   text,

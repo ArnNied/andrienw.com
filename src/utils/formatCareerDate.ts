@@ -1,4 +1,4 @@
-import { TCareer } from '@/components/careers/Career';
+import { TCareer } from '@/app/careers/page';
 
 export function formatCareerDate(date: TCareer['date']): string {
   if (!date) return '';

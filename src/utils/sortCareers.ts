@@ -1,4 +1,4 @@
-import { TCareer } from '@/components/careers/Career';
+import { TCareer } from '@/app/careers/page';
 
 export function sortCareers(careers: TCareer[]): TCareer[] {
   // Sort experience by descending:
@@ -17,7 +17,7 @@ export function sortCareers(careers: TCareer[]): TCareer[] {
       (b.date.current ? 1 : 0) - (a.date.current ? 1 : 0) ||
       (b.date.end?.year || 0) - (a.date.end?.year || 0) ||
       (b.date.end?.month || 0) - (a.date.end?.month || 0) ||
-      (b.title || '').localeCompare(a.title || '')
+      (b.title.text || '').localeCompare(a.title.text || '')
     );
   });
 }

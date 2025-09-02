@@ -1,7 +1,8 @@
 import { motion } from 'motion/react';
 import { JSX } from 'react';
-import Career, { TCareer } from './Career';
+import Career from './Career';
 import { sortCareers } from '@/utils/sortCareers';
+import { TCareer } from '@/app/careers/page';
 
 export default function Section({
   careers,
