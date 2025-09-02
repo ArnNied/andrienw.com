@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { AnimatePresence } from 'motion/react';
 import Section from '@/components/careers/Section';
 import CareerModal from '@/components/careers/CareerModal';
+import { ECareerSections } from './types';
 
 export type TCareer = {
   title: {
@@ -29,11 +30,6 @@ export type TCareer = {
     current: boolean;
   };
 };
-
-export enum ECareerSections {
-  Experience = 'experience',
-  Education = 'education',
-}
 
 const experiences: TCareer[] = [
   {
@@ -229,6 +225,10 @@ const educations: TCareer[] = [
       {
         src: '/img/ubsi/student-profile.jpg',
         alt: 'Student Profile at Bina Sarana Informatika University',
+      },
+      {
+        src: '/img/ubsi/khs.jpg',
+        alt: 'KHS at Bina Sarana Informatika University',
       },
     ],
     date: {
