@@ -84,7 +84,7 @@ export default function Navbar(): JSX.Element {
           <Link href='/' className='flex items-center'>
             <Image
               rel='icon'
-              src='/icons/icon512x512.png'
+              src='/icon/icon512x512.png'
               alt='logo'
               width={48}
               height={48}

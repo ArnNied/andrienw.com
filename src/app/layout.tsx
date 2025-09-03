@@ -9,7 +9,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
-  title: 'Andrien Wiandyano — Web Developer',
+  // title: 'Andrien Wiandyano — Web Developer',
+  title: {
+    template: 'Andrien Wiandyano — %s',
+    default: 'Andrien Wiandyano — Web Developer',
+  },
   authors: [{ name: 'Andrien Wiandyano', url: 'https://andrienw.com' }],
   description:
     "Andrien Wiandyano's personal website and portfolio. I'm an aspiring Web Developer based in Indonesia",

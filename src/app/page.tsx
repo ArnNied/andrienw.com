@@ -1,10 +1,5 @@
-import Page from '@/components/core/Page';
-import HeroSection from '@/components/home/section/HeroSection';
+import HomePage from '@/pages/HomePage';
 
-export default function HomePage() {
-  return (
-    <Page>
-      <HeroSection />
-    </Page>
-  );
+export default function Page() {
+  return <HomePage />;
 }
