@@ -122,7 +122,7 @@ export default function Modal({
       />
       <div className='fixed inset-0 w-screen overflow-y-auto py-4'>
         <div className='container flex min-h-full items-center justify-center'>
-          <DialogPanel className='relative px-6 md:px-12 py-4 md:py-8 bg-theme border border-secondary rounded-lg'>
+          <DialogPanel className='relative px-6 md:px-12 py-4 md:py-8 bg-themer border border-secondary rounded-lg'>
             <button
               type='button'
               onClick={modalCloseCallback}

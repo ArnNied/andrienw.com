@@ -22,19 +22,21 @@ export function SwitchButton({
   return (
     <motion.button
       type='button'
-      className='relative w-full p-2 flex flex-row items-center cursor-pointer'
+      className='group relative w-full p-2 flex flex-row items-center cursor-pointer'
       onClick={() => onClick(activeSection)}
     >
       <Icon
         className={clsx(
           'transition-colors',
           buttonIsActive && 'text-text-lighter',
+          !buttonIsActive && 'group-hover:text-primary',
         )}
       />
       <span
         className={clsx(
           'ml-2 hidden md:block transition-colors',
           buttonIsActive && 'text-text-lighter',
+          !buttonIsActive && 'group-hover:text-primary',
         )}
       >
         {text}
@@ -58,7 +60,7 @@ export default function CategorySwitch({
   setActiveSection: (section: ECareerSections) => void;
 }): JSX.Element {
   return (
-    <nav className='grow-0 fixed h-fit inset-y-0 left-2 lg:left-10 my-auto flex flex-col justify-center items-start bg-themer rounded-lg border-2 border-secondary overflow-hidden'>
+    <nav className='grow-0 fixed h-fit inset-y-0 left-2 lg:left-10 my-auto flex flex-col justify-center items-start bg-themer rounded-lg border-1 border-secondary overflow-hidden shadow-lg shadow-accent/20'>
       <SwitchButton
         text='Experience'
         Icon={Briefcase}

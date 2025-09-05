@@ -122,7 +122,7 @@ export default function Career({
           <button
             type='button'
             onClick={() => setCareerModalData(career)}
-            className='px-10 py-6 cursor-pointer hover:bg-theme text-left border border-secondary hover:ring-4 hover:ring-secondary rounded-lg transition-all hover:scale-102 bg-themer'
+            className='px-10 py-6 cursor-pointer bg-themer text-left border border-secondary rounded-lg transition-all hover:scale-102 hover:shadow-2xl shadow-accent/20'
           >
             <ul className='list-disc space-y-2'>
               {career.responsibilities?.map((responsibility, index) => (

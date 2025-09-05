@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { JSX, useState } from 'react';
+import NavbarTheme from './NavbarTheme';
 
 type TNavbarRoute = {
   name: string;
@@ -23,7 +24,7 @@ function NavbarLink({
   return (
     <Link
       href={route.path}
-      className='block sm:inline-block py-2.5 sm:py-0 hover:text-primary focus:text-primary'
+      className='block w-full sm:w-auto sm:inline-block py-2 sm:py-0 hover:text-primary focus:text-primary'
       target={route.newTab ? '_blank' : '_self'}
       rel={route.newTab ? 'noopener noreferrer' : undefined}
     >
@@ -71,20 +72,15 @@ export default function Navbar(): JSX.Element {
     setIsOpen(!isOpen);
 
     if (isOpen) {
-      document.getElementById('nav-link')?.classList.replace('h-34', 'h-0');
+      document.getElementById('nav-link')?.classList.replace('h-44', 'h-0');
     } else {
-      document.getElementById('nav-link')?.classList.replace('h-0', 'h-34');
+      document.getElementById('nav-link')?.classList.replace('h-0', 'h-44');
     }
-  }
-
-  function changeTheme() {
-    const html = document.documentElement;
-    html.classList.toggle('dark', !html.classList.contains('dark'));
   }
 
   return (
     <header className='inset-x-0 fixed top-0 bg-themer shadow-lg shadow-primary/20 backdrop-blur-lg z-20'>
-      <div className='w-full py-2 sm:py-0 flex flex-wrap justify-start items-center container'>
+      <div className='w-full py-3 flex flex-wrap justify-start items-center container'>
         <div className='w-full sm:w-auto mr-0 sm:mr-12 flex justify-between items-center'>
           <Link href='/' className='flex items-center'>
             <Image
@@ -102,7 +98,7 @@ export default function Navbar(): JSX.Element {
           <button
             type='button'
             onClick={toggleMenu}
-            className='w-11 h-9 p-1.5 block flex items-center justify-center sm:hidden border border-text-light rounded'
+            className='w-11 h-9 p-1.5 block flex items-center justify-center sm:hidden rounded cursor-pointer hover:text-primary transition-colors'
           >
             {isOpen ? (
               <X className='w-full h-full' />
@@ -113,7 +109,7 @@ export default function Navbar(): JSX.Element {
         </div>
         <nav
           id='nav-link'
-          className='w-full sm:w-auto h-0 sm:h-auto block flex-col sm:flex-row items-start sm:items-center sm:space-x-6 sm:py-6 transition-[height] duration-300 overflow-hidden'
+          className='w-full sm:flex-1 h-0 sm:h-auto block flex flex-col sm:flex-row items-start sm:items-center sm:space-x-6 transition-[height] duration-300 overflow-hidden'
         >
           {routes.map((route) => (
             <NavbarLink
@@ -122,13 +118,7 @@ export default function Navbar(): JSX.Element {
               pathname={pathname || ''}
             />
           ))}
-          <button
-            type='button'
-            onClick={changeTheme}
-            className='cursor-pointer'
-          >
-            CHANGE THEME
-          </button>
+          <NavbarTheme />
         </nav>
       </div>
       {/* Gradient line */}
