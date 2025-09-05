@@ -1,4 +1,4 @@
-import { TCareer } from '@/app/careers/page';
+import { TCareer } from '@/pages/CareersPage';
 
 export function formatCareerDate(date: TCareer['date']): string {
   if (!date) return '';

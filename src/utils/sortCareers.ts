@@ -1,4 +1,4 @@
-import { TCareer } from '@/app/careers/page';
+import { TCareer } from '@/pages/CareersPage';
 
 export function sortCareers(careers: TCareer[]): TCareer[] {
   // Sort experience by descending:
