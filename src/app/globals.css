@@ -1,20 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import 'tailwindcss';
 
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+@custom-variant dark (&:where(.dark, .dark *));
 
-@theme inline {
+@theme {
+    /* Old Theme */
   /* https://realtimecolors.com/?colors=f2edfd-0a0416-5416d0-1c024f-c61ce8 */
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-text-light: #f2edfd;
-  --color-text-dark: #0a0416;
-  --color-background-light: #f2edfd;
+  /* --color-background-light: #f2edfd;
   --color-background-dark: #0a0416;
   --color-primary: #5416d0;
   --color-secondary: #1c024f;
-  --color-accent: #c61ce8;
+  --color-accent: #c61ce8; */
 
+  /* Reworked Theme */
+  --color-background-darker: oklch(0.13 0.04 300);
+  --color-background-dark: oklch(0.18 0.04 300);
+
+  /* "Lighter" and "Light" is switched due to weird name hierarchy if not switched */
+  --color-background-lighter: oklch(0.90 0.02 300);
+  --color-background-light: oklch(0.95 0.02 300);
+
+  --color-text-darker: oklch(0.13 0.06 300);
+  --color-text-dark: oklch(0.53 0.06 300);
+
+  --color-text-lighter: oklch(0.95 0.02 300);
+  --color-text-light: oklch(0.55 0.06 300);
+
+  --color-primary: oklch(0.45 0.24 285);
+  --color-secondary: oklch(0.22 0.12 286);
+  --color-accent: oklch(0.61 0.28 320);
+}
+
+@theme inline {
   --font-sans: 'Roboto', var(--font-geist-sans), var(--font-sans);
   --font-mono: var(--font-geist-mono), var(--font-mono);
   --default-transition-duration: 100ms;
@@ -75,32 +92,54 @@
   .text-size-reset {
     @apply !text-base;
   }
-
-  .gradient__ll {
-    @apply bg-linear-to-l from-primary to-accent;
-  }
-
-  .gradient__lr {
-    @apply bg-linear-to-r from-primary to-accent;
-  }
-
-  .gradient__lt {
-    @apply bg-linear-to-t from-primary to-accent;
-  }
-
-  .gradient__lb {
-    @apply bg-linear-to-b from-primary to-accent;
-  }
-
-  .gradient-text {
-    @apply bg-clip-text text-transparent pb-2 -mb-2;
-  }
 }
 
 @layer utilities {
+  /* Should probably be in components. But it got overwritten by tailwind built-in class */
   .container {
     @apply max-w-lg sm:max-w-2xl md:max-w-4xl lg:max-w-7xl mx-auto px-6 md:px-12;
   }
+
+  .gradient__ll, .gradient__lr, .gradient__lt, .gradient__lb {
+    @apply from-primary to-accent
+  }
+
+  .gradient__ll {
+    @apply bg-linear-to-l
+  }
+
+  .gradient__lr {
+    @apply bg-linear-to-r
+  }
+
+  .gradient__lt {
+    @apply bg-linear-to-t
+  }
+
+  .gradient__lb {
+    @apply bg-linear-to-b
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent pb-2 -mb-2 underline;
+  }
+}
+
+/* https://tailwindcss.com/docs/adding-custom-styles#simple-utilities */
+@utility bg-theme {
+  @apply bg-background-light dark:bg-background-dark transition-colors;
+}
+
+@utility bg-themer {
+  @apply bg-background-lighter dark:bg-background-darker transition-colors;
+}
+
+@utility text-theme {
+  @apply text-text-dark dark:text-text-light transition-colors;
+}
+
+@utility text-themer {
+  @apply text-text-darker dark:text-text-lighter transition-colors;
 }
 
 .embla {

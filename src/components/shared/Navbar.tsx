@@ -77,8 +77,13 @@ export default function Navbar(): JSX.Element {
     }
   }
 
+  function changeTheme() {
+    const html = document.documentElement;
+    html.classList.toggle('dark', !html.classList.contains('dark'));
+  }
+
   return (
-    <header className='inset-x-0 fixed top-0 light:bg-background-light/75 dark:bg-background-dark/75 shadow-lg shadow-primary/20 backdrop-blur-lg z-20'>
+    <header className='inset-x-0 fixed top-0 bg-themer shadow-lg shadow-primary/20 backdrop-blur-lg z-20'>
       <div className='w-full py-2 sm:py-0 flex flex-wrap justify-start items-center container'>
         <div className='w-full sm:w-auto mr-0 sm:mr-12 flex justify-between items-center'>
           <Link href='/' className='flex items-center'>
@@ -111,8 +116,19 @@ export default function Navbar(): JSX.Element {
           className='w-full sm:w-auto h-0 sm:h-auto block flex-col sm:flex-row items-start sm:items-center sm:space-x-6 sm:py-6 transition-[height] duration-300 overflow-hidden'
         >
           {routes.map((route) => (
-            <NavbarLink key={route.name} route={route} pathname={pathname} />
+            <NavbarLink
+              key={route.name}
+              route={route}
+              pathname={pathname || ''}
+            />
           ))}
+          <button
+            type='button'
+            onClick={changeTheme}
+            className='cursor-pointer'
+          >
+            CHANGE THEME
+          </button>
         </nav>
       </div>
       {/* Gradient line */}

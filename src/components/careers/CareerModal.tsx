@@ -2,7 +2,7 @@ import { JSX } from 'react';
 import { Description } from '@headlessui/react';
 import { formatCareerDate } from '@/utils/formatCareerDate';
 import Modal from '@/components/shared/Modal';
-import { TCareer } from '@/app/careers/page';
+import { TCareer } from '@/pages/CareersPage';
 
 export default function CareerModal({
   isOpen,

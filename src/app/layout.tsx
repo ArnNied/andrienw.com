@@ -46,8 +46,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en' data-theme='dark'>
-      <body className='bg-background-light dark:bg-background-dark text-text-dark dark:text-text-light antialiased'>
+    <html lang='en' className='dark'>
+      <body className='bg-themer text-themer antialiased'>
         {children}
         <Analytics />
         <SpeedInsights />

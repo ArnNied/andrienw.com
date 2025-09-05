@@ -103,7 +103,7 @@ export default function HeroSection(): JSX.Element {
             <span className='flex items-center justify-center w-6 h-6'>
               {icon}
             </span>
-            <span className='text-slate-500 group-hover:text-text-light transition-colors'>
+            <span className='text-theme group-hover:text-themer transition-colors'>
               {label}
             </span>
           </a>

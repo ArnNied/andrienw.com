@@ -1,4 +1,4 @@
-import { TCareer } from '@/app/careers/page';
+import { TCareer } from '@/pages/CareersPage';
 import { formatCareerDate } from '@/utils/formatCareerDate';
 import clsx from 'clsx';
 import Link from 'next/link';
@@ -58,7 +58,7 @@ function CareerSubtitleMuted({
   return (
     <>
       {text && (
-        <p className={clsx('text-size-sm text-slate-500', italic && 'italic')}>
+        <p className={clsx('text-size-sm text-theme', italic && 'italic')}>
           {text}
         </p>
       )}
@@ -93,7 +93,7 @@ export default function Career({
       <div className='hidden md:flex relative grow-0 w-8 px-12 flex flex-col items-center'>
         {/* Circle indicator */}
         <span
-          className={clsx('w-6 h-6 rounded-full border-4 bg-background-dark', {
+          className={clsx('w-6 h-6 rounded-full border-4 bg-themer', {
             'border-accent mt-16': isFirst,
             'border-primary absolute top-16': !isFirst,
           })}
@@ -113,7 +113,7 @@ export default function Career({
             'w-1 grow',
             isFirst ? 'gradient__lt' : 'bg-primary',
             isLast &&
-              'bg-linear-to-b from-bg-primary from-50% to-background-dark',
+              'bg-linear-to-b from-bg-primary from-50% to-background-lighter dark:to-background-darker transition-colors',
           )}
         ></div>
       </div>
@@ -122,7 +122,7 @@ export default function Career({
           <button
             type='button'
             onClick={() => setCareerModalData(career)}
-            className='px-10 py-6 cursor-pointer hover:bg-primary text-left border border-secondary hover:ring-4 hover:ring-secondary rounded-lg transition-all hover:scale-102'
+            className='px-10 py-6 cursor-pointer hover:bg-theme text-left border border-secondary hover:ring-4 hover:ring-secondary rounded-lg transition-all hover:scale-102 bg-themer'
           >
             <ul className='list-disc space-y-2'>
               {career.responsibilities?.map((responsibility, index) => (
