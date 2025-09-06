@@ -60,20 +60,20 @@ export default function CategorySwitch({
   setActiveSection: (section: ECareerSections) => void;
 }): JSX.Element {
   return (
-    <nav className='grow-0 fixed h-fit inset-y-0 left-2 lg:left-10 my-auto flex flex-col justify-center items-start bg-themer rounded-lg border-1 border-secondary overflow-hidden shadow-lg shadow-accent/20'>
+    <nav className='grow-0 fixed h-fit inset-y-0 left-2 lg:left-10 my-auto flex flex-col justify-center items-start bg-themer rounded-md border-1 border-secondary overflow-hidden shadow-lg shadow-accent/20'>
       <SwitchButton
         text='Experience'
         Icon={Briefcase}
-        buttonSection={ECareerSections.Experience}
+        buttonSection={ECareerSections.EXPERIENCE}
         activeSection={activeSection}
-        onClick={() => setActiveSection(ECareerSections.Experience)}
+        onClick={() => setActiveSection(ECareerSections.EXPERIENCE)}
       />
       <SwitchButton
         text='Education'
         Icon={School}
-        buttonSection={ECareerSections.Education}
+        buttonSection={ECareerSections.EDUCATION}
         activeSection={activeSection}
-        onClick={() => setActiveSection(ECareerSections.Education)}
+        onClick={() => setActiveSection(ECareerSections.EDUCATION)}
       />
     </nav>
   );

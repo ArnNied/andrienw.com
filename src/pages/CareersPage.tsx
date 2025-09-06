@@ -8,8 +8,8 @@ import Section from '@/components/careers/Section';
 import CareerModal from '@/components/careers/CareerModal';
 
 export enum ECareerSections {
-  Experience = 'experience',
-  Education = 'education',
+  EXPERIENCE = 'experience',
+  EDUCATION = 'education',
 }
 
 export type TCareer = {
@@ -259,7 +259,7 @@ const educations: TCareer[] = [
 
 export default function CareersPage() {
   const [activeSection, setActiveSection] = useState<ECareerSections>(
-    ECareerSections.Experience,
+    ECareerSections.EXPERIENCE,
   );
 
   const [careerModalIsOpen, setCareerModalIsOpen] = useState<boolean>(false);
@@ -275,14 +275,14 @@ export default function CareersPage() {
   return (
     <Page>
       <AnimatePresence mode='wait'>
-        {activeSection === ECareerSections.Experience && (
+        {activeSection === ECareerSections.EXPERIENCE && (
           <Section
             key='experience'
             careers={experiences}
             setCareerModalData={_setCareerModalData}
           />
         )}
-        {activeSection === ECareerSections.Education && (
+        {activeSection === ECareerSections.EDUCATION && (
           <Section
             key='education'
             careers={educations}

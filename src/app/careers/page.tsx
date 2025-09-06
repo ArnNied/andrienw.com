@@ -7,8 +7,7 @@ export const metadata: Metadata = {
   },
   title: 'Careers',
   authors: [{ name: 'Andrien Wiandyano', url: 'https://andrienw.com' }],
-  description:
-    "Andrien Wiandyano's life journey, education, and professional experience.",
+  description: "Andrien Wiandyano's history of experiences and educations.",
   keywords: [
     'Andrien Wiandyano',
     'Andrien',
@@ -26,8 +25,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://andrienw.com/careers',
     title: 'Andrien Wiandyano — Careers',
-    description:
-      "Andrien Wiandyano's life journey, education, and professional experience.",
+    description: "Andrien Wiandyano's history of experiences and educations.",
     siteName: 'Andrien Wiandyano — Careers',
   },
 };

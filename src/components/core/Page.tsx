@@ -1,5 +1,6 @@
 import Navbar from '@/components/shared/Navbar';
 import { JSX } from 'react';
+import Footer from '@/components/shared/Footer';
 
 export default function Page({
   children,
@@ -16,6 +17,7 @@ export default function Page({
     <>
       {navbar && <Navbar />}
       <main>{children}</main>
+      {footer && <Footer />}
     </>
   );
 }

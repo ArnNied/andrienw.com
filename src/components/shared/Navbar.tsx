@@ -79,7 +79,7 @@ export default function Navbar(): JSX.Element {
   }
 
   return (
-    <header className='inset-x-0 fixed top-0 bg-themer shadow-lg shadow-primary/20 backdrop-blur-lg z-20'>
+    <header className='inset-x-0 fixed top-0 bg-themer shadow-lg shadow-accent/20 backdrop-blur-lg z-20'>
       <div className='w-full py-3 flex flex-wrap justify-start items-center container'>
         <div className='w-full sm:w-auto mr-0 sm:mr-12 flex justify-between items-center'>
           <Link href='/' className='flex items-center'>
@@ -98,7 +98,7 @@ export default function Navbar(): JSX.Element {
           <button
             type='button'
             onClick={toggleMenu}
-            className='w-11 h-9 p-1.5 block flex items-center justify-center sm:hidden rounded cursor-pointer hover:text-primary transition-colors'
+            className='w-11 h-9 p-1.5 block flex items-center justify-center sm:hidden cursor-pointer hover:text-primary transition-colors'
           >
             {isOpen ? (
               <X className='w-full h-full' />

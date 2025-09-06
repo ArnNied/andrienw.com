@@ -94,7 +94,7 @@ function NavbarThemeSelect({
   setTheme: (theme: ETheme) => void;
 }): JSX.Element {
   return (
-    <div className='mt-2 sm:mt-0 sm:hidden flex border border-secondary rounded-lg overflow-hidden'>
+    <div className='mt-2 sm:mt-0 sm:hidden flex border border-secondary rounded-md overflow-hidden'>
       <NavbarThemeSelectButton
         theme={ETheme.DARK}
         Icon={Moon}
