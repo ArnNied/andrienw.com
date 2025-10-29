@@ -47,10 +47,10 @@ const experiences: TCareer[] = [
     type: 'Internship',
     responsibilities: [
       'Worked within an Agile framework to deliver high-quality software solutions',
-      'Improved codebase maintainability by proposing and implementing widely adopted design patterns',
       'Developed and maintained microservices with Typescript, Golang, and MongoDB across three key projects',
-      'Enhanced internal tools to streamline and automate documentation generation within the development pipeline',
-      'Implemented unit tests with 90%+ coverage to ensure robust code quality',
+      'Applied Repository patterns to create a scalable and maintainable codebase',
+      'Enhanced internal tools to streamline and automate Swagger documentation generation within the development pipeline',
+      'Wrote unit tests and integration tests with 95%+ coverage to ensure code quality and reliability',
     ],
     images: [
       {
@@ -140,7 +140,6 @@ const experiences: TCareer[] = [
     },
     type: 'Freelance',
     responsibilities: [
-      'Worked with one of Indonesia\'s Virtual Youtuber (VTuber) Agency called "GENESIX"',
       'Transformed Figma designs into front-end code',
       'Provided customized solution to refine website design',
       'Utilized front-end technologies to create interactive and responsive interfaces',
@@ -160,7 +159,7 @@ const experiences: TCareer[] = [
   },
   {
     title: {
-      text: 'IT Support',
+      text: 'Quality Assurance',
     },
     subtitle: {
       text: 'PT Megacom Alfa Pratama',
