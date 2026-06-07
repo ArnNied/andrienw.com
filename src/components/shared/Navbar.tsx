@@ -55,7 +55,7 @@ export default function Navbar(): JSX.Element {
     //   newTab: false,
     // },
     {
-      name: 'Projects',
+      name: 'Portfolio',
       path: 'https://github.com/ArnNied/',
       newTab: true,
     },

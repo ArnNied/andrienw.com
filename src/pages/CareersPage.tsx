@@ -38,6 +38,45 @@ export type TCareer = {
 const experiences: TCareer[] = [
   {
     title: {
+      text: 'Golang Developer',
+    },
+    subtitle: {
+      text: 'PT IDstar Cipta Teknologi (IDstar)',
+      href: 'https://www.wangsit.id/',
+    },
+    type: 'Internship',
+    responsibilities: [
+      'Worked within an Agile framework to deliver high-quality software solutions',
+      'Recognized by team lead to provide guidance and direction to the intern group',
+      'Contributed insights that enhanced codebase boilerplate structure and onboarding materials',
+      'Utilized RabbitMQ as a message broker to enable reliable, asynchronous communication between distributed microservices, improving system scalability and decoupling service dependencies.',
+      'Leveraged Docker to containerize applications and manage development and deployment environments, ensuring consistency, portability, and streamlined CI/CD workflows.',
+      'Proposed enhancements to testing tools and methodologies to improve quality and efficiency',
+      'Designed and implemented PDF generation scripts and CSV processing workflows to support ERP business operations and data handling ',
+      'Wrote unit tests and integration tests with 90%+ coverage to ensure code quality and reliability',
+    ],
+    images: [
+      {
+        src: '/img/idstar/weekly-meeting.jpg',
+        alt: 'Weekly meeting at PT IDstar Cipta Teknologi (IDstar)',
+      },
+      {
+        src: '/img/idstar/personal-photo.jpg',
+        alt: 'Personal photo in front of PT IDstar Cipta Teknologi (IDstar) company values',
+      },
+      {
+        src: '/img/idstar/certificate.jpg',
+        alt: 'Certificate of Internship at PT IDstar Cipta Teknologi (IDstar)',
+      },
+    ],
+    date: {
+      start: { month: 11, year: 2025 },
+      end: { month: 5, year: 2026 },
+      current: false,
+    },
+  },
+  {
+    title: {
       text: 'Backend Developer',
     },
     subtitle: {
@@ -50,17 +89,9 @@ const experiences: TCareer[] = [
       'Developed and maintained microservices with Typescript, Golang, and MongoDB across three key projects',
       'Applied Repository patterns to create a scalable and maintainable codebase',
       'Enhanced internal tools to streamline and automate Swagger documentation generation within the development pipeline',
-      'Wrote unit tests and integration tests with 95%+ coverage to ensure code quality and reliability',
+      'Wrote unit tests and integration tests with 90%+ coverage to ensure code quality and reliability',
     ],
     images: [
-      {
-        src: '/img/asdf/certificate.jpg',
-        alt: 'Certificate of Internship at PT Angkasa Defender Indonesia',
-      },
-      {
-        src: '/img/asdf/first-week.jpg',
-        alt: 'First week at PT Angkasa Defender Indonesia',
-      },
       {
         src: '/img/asdf/onboarding.jpg',
         alt: 'Onboarding at PT Angkasa Defender Indonesia',
@@ -72,6 +103,15 @@ const experiences: TCareer[] = [
       {
         src: '/img/asdf/daily.jpg',
         alt: 'Daily Activity at PT Angkasa Defender Indonesia',
+      },
+      {
+        src: '/img/asdf/first-week.jpg',
+        alt: 'First week at PT Angkasa Defender Indonesia',
+      },
+
+      {
+        src: '/img/asdf/certificate.jpg',
+        alt: 'Certificate of Internship at PT Angkasa Defender Indonesia',
       },
     ],
     date: {
@@ -237,7 +277,7 @@ const educations: TCareer[] = [
     date: {
       start: { year: 2021 },
       end: { year: 2025 },
-      current: true,
+      current: false,
     },
   },
   {

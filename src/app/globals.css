@@ -4,7 +4,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-    /* Old Theme */
+  /* Old Theme */
   /* https://realtimecolors.com/?colors=f2edfd-0a0416-5416d0-1c024f-c61ce8 */
   /* --color-background-light: #f2edfd;
   --color-background-dark: #0a0416;
@@ -95,12 +95,16 @@
 }
 
 @layer utilities {
+
   /* Should probably be in components. But it got overwritten by tailwind built-in class */
   .container {
     @apply max-w-lg sm:max-w-2xl md:max-w-4xl lg:max-w-7xl mx-auto px-6 md:px-12;
   }
 
-  .gradient__ll, .gradient__lr, .gradient__lt, .gradient__lb {
+  .gradient__ll,
+  .gradient__lr,
+  .gradient__lt,
+  .gradient__lb {
     @apply from-primary to-accent
   }
 
@@ -190,9 +194,9 @@
 }
 
 .embla__dot {
-  @apply relative w-3 h-3 bg-background-light rounded-full shadow-2xl ring-1 ring-accent cursor-pointer transition
+  @apply relative w-3 h-3 bg-background-light rounded-full shadow-2xl ring-1 ring-accent cursor-pointer transition duration-300
 }
 
 .embla__dot--selected {
-  @apply ring-3 ring-accent
+  @apply !bg-accent transition duration-300
 }

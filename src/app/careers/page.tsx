@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     'Developer',
     'Web Developer',
     'Software Developer',
+    'Software Engineer',
     'Careers',
   ],
   openGraph: {
