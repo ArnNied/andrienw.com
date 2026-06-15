@@ -42,7 +42,7 @@ const experiences: TCareer[] = [
     },
     subtitle: {
       text: 'PT IDstar Cipta Teknologi (IDstar)',
-      href: 'https://www.wangsit.id/',
+      href: 'https://idstar.co.id/',
     },
     type: 'Internship',
     responsibilities: [
